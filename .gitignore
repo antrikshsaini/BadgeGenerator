@@ -1,0 +1,37 @@
+# dependencies
+/badge-generator/node_modules
+/badge-generator/.pnp
+/badge-generator.pnp.js
+/badge-generator.yarn/install-state.gz
+
+# testing
+/badge-generator/coverage
+
+# next.js
+/badge-generator/.next/
+/badge-generator/out/
+
+# production
+/badge-generator/build
+
+# misc
+/badge-generator.DS_Store
+/badge-generator*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+/badge-generator.env*.local
+
+# vercel
+/badge-generator.vercel
+
+# typescript
+*.tsbuildinfo
+/badge-generator.next-env.d.ts
+
+**/__pycache__/
+event_manager/venv/
