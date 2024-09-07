@@ -29,8 +29,7 @@ export default function SuperuserPage() {
         }
 
         const badgesResponse = await axios.get(
-          "http://localhost:8000/api/badges/",
-          { params: { organiser_id: userId } }
+          "http://localhost:8000/api/badges/"
         );
         setBadges(badgesResponse.data);
 

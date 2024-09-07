@@ -21,9 +21,12 @@ export default function OrganiserPage() {
           return;
         }
 
-        const response = await axios.get("http://localhost:8000/api/badges/", {
-          params: { organiser_id: organiserId },
-        });
+        const response = await axios.get(
+          "http://localhost:8000/api/badges/organiser/",
+          {
+            params: { organiser_id: organiserId },
+          }
+        );
 
         setBadges(response.data);
       } catch (err: any) {

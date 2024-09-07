@@ -48,11 +48,18 @@ class CreateBadgeView(CreateAPIView):
             raise PermissionDenied('Only organisers can create badges.')
         serializer.save(user=user)
 
-# GET /badges
-class ListBadgesView(ListAPIView):
+# GET /list badges by organiser
+class ListBadgesOrganiserView(ListAPIView):
     queryset = Badge.objects.all()
     serializer_class = BadgeSerializer
 
     def get_queryset(self):
         user = self.request.query_params.get('organiser_id')
-        return Badge.objects.filter(user=user)
+        if user:
+            return Badge.objects.filter(user=user)
+        return Badge.objects.none() 
+
+# GET /list all badges
+class ListBadgesView(ListAPIView):
+    queryset = Badge.objects.all()
+    serializer_class = BadgeSerializer
